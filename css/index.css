@@ -1,0 +1,68 @@
+body{
+	
+	background-color:#71C15B;
+
+
+}
+.header{
+   height:50px;
+   background-color: #2c3742;
+}
+
+.header .logo h1{
+   font-size:30px;
+   margin:0px;
+   padding:10px 0px;
+}
+
+.header .logo h1 a{
+   color:#fff;
+   font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.header .logo h1 a:hover{
+   color:#fff;
+   text-decoration:none;
+   border:0px;
+}
+#login{
+	
+	font-family: arial;
+	font-size: 30px;
+	border-bottom-style: ridge;
+	color:black;
+	
+	
+}
+#login-box{
+	
+	background-color: white;
+	min-height: 300px;
+	opacity: 0.90;
+	padding: 40px 80px 40px 80px;	
+	width: 500px;
+}
+.user{
+	font-family: arial;
+	font-size: 20px;
+	color:black;
+}
+
+.input-group-addon{
+	background:green;
+	color:white;
+	
+}
+
+
+.btn{
+	width: 50%;
+	float:left;
+}
+
+#forgot-pass{
+	color:black;
+	font-size: 15px;
+	float: right;
+	
+}
