@@ -9,6 +9,16 @@ if($_SESSION['u_name']==NULL){
 include_once("../includes/db.php");
   // using mysqli_query instead
 ?>
+
+<?php
+
+if(isset($_POST['logout'])){
+	
+	header("Location: ../includes/logout.php");
+	exit();
+	
+}
+?>
 <?php
 // notification count
 include_once("../includes/db.php");
@@ -22,18 +32,6 @@ $count = $row[ 'COUNT(id)' ];
 //return;
 ?>
 
-<?php
-
-if(isset($_POST['logout'])){
-	
-	header("Location: ../includes/logout.php");
-	exit();
-	
-}
-
-
-
-?>
 <!doctype html>
 <html>
 
@@ -86,7 +84,7 @@ if(isset($_POST['logout'])){
 					<a href="requests.php" class="list-group-item list-group-item-action">Service Requet Received<span class="fa fa-globe" style="color: red;font-weight: 800;padding: 5px;"></span></a>
 					<a href="rent.php" class="list-group-item list-group-item-action ">Rent Request Send</a>
 					<a href="payment_received.php" class="list-group-item list-group-item-action">Rent Request Details</a>
-					<a href="#" class="list-group-item list-group-item-action">Payment History</a>
+					<a href="payment_history.php" class="list-group-item list-group-item-action">Payment History</a>
 					<a href="send_msg.php" class="list-group-item list-group-item-action">Request/Complain</a>
 					<a href="io_tracker.php" class="list-group-item list-group-item-action">In-Out Track</a>
 					<a href="staff_Add.php"  class="list-group-item list-group-item-action">Staff Add</a>

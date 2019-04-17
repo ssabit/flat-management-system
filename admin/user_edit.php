@@ -10,7 +10,15 @@ if($_SESSION['u_id']==NULL){
 //echo "username: ".$_SESSION['u_id']."<br>";
 //echo "email: ".$_SESSION['u_email'];
 ?>
+<?php
 
+if(isset($_POST['logout'])){
+	
+	header("Location: ../includes/logout.php");
+	exit();
+	
+}
+?>
 <?php
 // including the database connection file
 include_once("../includes/db.php");
@@ -43,12 +51,14 @@ if(isset($_POST['update']))
         } 
 	
 	} else {    
-
-        $result = mysqli_query($con, "UPDATE users SET username='$username',password='$password',email='$email',user_level=$level WHERE id=$id");
+            
+            $hashpassword = password_hash($password, PASSWORD_BCRYPT);
+            
+        $result = mysqli_query($con, "UPDATE users SET username='$username',password='$hashpassword',email='$email',user_level=$level WHERE id=$id");
        
-		//$result = mysqli_query($con, "UPDATE users SET username='$username',password='$password',email='$email' WHERE id=$id");
+		//$result = mysqli_query($con, "UPDATE users SET username='$username',password='$hashpassword',email='$email' WHERE id=$id");
 		// echo $username;
-        //echo $password;
+        //echo $hashpassword;
         //echo $email;
         //echo $userlevel;
 		//echo "$result";
@@ -83,6 +93,7 @@ while($res = mysqli_fetch_array($result))
 	<meta charset="utf-8">
 	<title>User Edit</title>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="../css/user.css">
@@ -98,10 +109,13 @@ while($res = mysqli_fetch_array($result))
 				<li id="user">User:
 					<?php echo $_SESSION['u_id'];?>
 				</li><br>
-				<li id="button"><button type="button" class="btn btn-default btn-sm">
+				<form action="user_edit.php" method="post">
+				
+				<li id="button"><button  name="logout" type="submit" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-log-out"></span> Log out
         </button>
 				</li>
+				</form>
 			</ul>
 
 		</div>

@@ -10,6 +10,18 @@ if($_SESSION['u_name']==NULL){
 $id=$_SESSION['id']
 ?>
 <?php
+
+if(isset($_POST['logout'])){
+	
+	header("Location: ../includes/logout.php");
+	exit();
+	
+}
+
+
+
+?>
+<?php
 // notification count
 include_once("../includes/db.php");
 
@@ -22,18 +34,7 @@ $count = $row[ 'COUNT(id)' ];
 //return;
 ?>
 
-<?php
 
-if(isset($_POST['logout'])){
-	
-	header("Location: ../includes/logout.php");
-	exit();
-	
-}
-
-
-
-?>
 <?php
 
 // php code to search data in mysql database and set it in input text

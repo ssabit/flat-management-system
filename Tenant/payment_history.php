@@ -9,6 +9,14 @@ $uid=$_SESSION['id'];
  // using mysqli_query instead
 ?>
 <?php
+
+if(isset($_POST['logout'])){
+	
+	header("Location: ../includes/logout.php");
+	exit();
+}
+?>
+<?php
 // notification count
 include_once("../includes/db.php");
 $flat=$_SESSION['flat'];
@@ -41,18 +49,6 @@ $servicecount = $row['COUNT(id)'];
 //return;
 ?>
 
-<?php
-
-if(isset($_POST['logout'])){
-	
-	header("Location: ../includes/logout.php");
-	exit();
-	
-}
-
-
-
-?>
 
 
 <!doctype html>
@@ -80,7 +76,7 @@ if(isset($_POST['logout'])){
 				<li id="user">User:
 					<?php echo $_SESSION['u_id'];?>
 				</li><br>
-				<form action="<?php $_PHP_Self ?>" method="post">
+				<form action="<?php $_PHP_Self; ?>" method="post">
 				
 				<li id="button"><button  name="logout" type="submit" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-log-out"></span> Log out

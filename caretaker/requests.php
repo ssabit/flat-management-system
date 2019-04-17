@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 if($_SESSION['u_name']==NULL){
     //haven't log in

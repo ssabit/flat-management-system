@@ -73,7 +73,7 @@ if(isset($_POST['login'])){
 					else if($row['user_level']==4){
 							//echo "2"; 
 						
-						header("Location: ../tenant/tenant.php");
+						header("Location: ../Tenant/tenant.php");
 						exit();	
 					}
 					else if($row['user_level']==3){

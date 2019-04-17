@@ -106,7 +106,7 @@ if(isset($_POST['logout'])){
             echo "<td>".$res['user_id']."</td>";
             echo "<td>".$res['user_name']."</td>";
 			echo "<td>".$res['balance']."</td>";
-            echo "<td><a href=\"accounts_edit.php?id=$res[id]\">Edit</a> | <a href=\"delete_bank_account.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+            echo "<td><a href=\"accounts_edit.php?id=$res[id]\"><button type='button' class='btn btn-info'>Edit</button></a> | <a href=\"delete_bank_account.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\"><button type='button' class='btn btn-danger'>Delete</button></a></td>";
 			
 
 			

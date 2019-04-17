@@ -10,6 +10,18 @@ include_once("../includes/db.php");
   // using mysqli_query instead
 ?>
 <?php
+
+if(isset($_POST['logout'])){
+	
+	header("Location: ../includes/logout.php");
+	exit();
+	
+}
+
+
+
+?>
+<?php
 // notification count
 include_once("../includes/db.php");
 
@@ -22,18 +34,7 @@ $count = $row[ 'COUNT(id)' ];
 //return;
 ?>
 
-<?php
 
-if(isset($_POST['logout'])){
-	
-	header("Location: ../includes/logout.php");
-	exit();
-	
-}
-
-
-
-?>
 <!doctype html>
 <html>
 
@@ -59,7 +60,7 @@ if(isset($_POST['logout'])){
 				<li id="user">User:
 					<?php echo $_SESSION['u_id'];?>
 				</li><br>
-				<form action="<?php $_PHP_Self ?>" method="post">
+				<form action="<?php $_PHP_Self; ?>" method="post">
 				
 				<li id="button"><button  name="logout" type="submit" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-log-out"></span> Log out
@@ -119,7 +120,7 @@ if(isset($_POST['logout'])){
 													<th>Phone No.</th>
 													<th>NID No.</th>
 													<th>Address</th>
-													<th>Type</th>
+													<th>Role</th>
 												
 												</thead>
 

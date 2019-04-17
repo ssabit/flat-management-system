@@ -1,6 +1,7 @@
 <?php
-session_start();
 
+session_start();
+include_once( "../includes/db.php" );
 
 if($_SESSION['u_id']==NULL){
     //haven't log in
@@ -9,8 +10,6 @@ if($_SESSION['u_id']==NULL){
     //Logged in
     $flat=$_SESSION['flat'];
     $id=$_SESSION['id'];
-
-
 
  	$date = new DateTime();
     $date->setTimeZone(new DateTimeZone("Asia/Dhaka"));
@@ -42,27 +41,22 @@ else{
 	if($pendingrequest>0){
 		echo "<script>window.alert('You have already a pending request!!')</script>";
 	}else{
-		$sql="INSERT INTO service(	flat_no,problem,date) VALUES ('$flat','$problem','$get_datetime')";
+		$sql="INSERT INTO service(flat_no,problem,date) VALUES ('$flat','$problem','$get_datetime')";
 		$result = mysqli_query( $con, $sql );
 		echo "<script>window.alert('Request Completed!!')</script>";
 	}
-	
-	
-	
-	
-	
-	
 }
-
-
-
-
-
-
 }
 
 ?>
+<?php
 
+if(isset($_POST['logout'])){
+	
+	header("Location: ../includes/logout.php");
+	exit();
+}
+?>
 <?php
 // notification count
 include_once("../includes/db.php");
@@ -98,18 +92,6 @@ $servicecount = $row['COUNT(id)'];
 //return;
 ?>
 
-<?php
-
-if(isset($_POST['logout'])){
-	
-	header("Location: ../includes/logout.php");
-	exit();
-	
-}
-
-
-
-?>
 <html>
 
 <head>

@@ -14,7 +14,14 @@ $taka=$res['balance'];
 
 
 ?>
+<?php
 
+if(isset($_POST['logout'])){
+	
+	header("Location: ../includes/logout.php");
+	exit();
+}
+?>
 <?php
 // notification count
 include_once("../includes/db.php");
@@ -50,20 +57,6 @@ $servicecount = $row['COUNT(id)'];
 //return;
 ?>
 
-
-
-<?php
-
-if(isset($_POST['logout'])){
-	
-	header("Location: ../includes/logout.php");
-	exit();
-	
-}
-
-
-
-?>
 <!doctype html>
 <html>
 
@@ -129,7 +122,7 @@ if(isset($_POST['logout'])){
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<form action="requests.php" method="post">
+								<form action="" method="post">
 									<div class="table-responsive">
 										<table class="table" id="users">
 											<tbody>

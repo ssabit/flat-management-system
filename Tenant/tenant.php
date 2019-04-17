@@ -53,11 +53,7 @@ if(isset($_POST['logout'])){
 	
 	header("Location: ../includes/logout.php");
 	exit();
-	
 }
-
-
-
 ?>
 <?php
 

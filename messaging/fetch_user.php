@@ -35,6 +35,10 @@ foreach($result as $row)
  $current_timestamp = strtotime(date("Y-m-d H:i:s") . '- 10 second');
  $current_timestamp = date('Y-m-d H:i:s', $current_timestamp);
  $user_last_activity = fetch_user_last_activity($row['id'], $connect);
+ 
+    //echo "last activity:".$user_last_activity;
+    //echo '<br>'."curr.time:".$current_timestamp;
+
  if($user_last_activity > $current_timestamp)
  {
   $status = '<span class="label label-success">Online</span>';

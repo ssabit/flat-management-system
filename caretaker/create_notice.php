@@ -51,7 +51,7 @@ if ( isset( $_POST[ 'post' ] ) ) {
 
 	//$_SESSION['u_id']="saad";
 
-	echo "Before query";
+	//echo "Before query";
 	include_once( "../includes/db.php" );
 	//var_dump($connect);
 	$sql = "INSERT INTO `notice`(`status`,`date`,`notice_owner`,`notice_title`) VALUES ('" . $nstatus . "','" . $get_datetime . "','" . $_SESSION[ 'u_id' ] . "','" . $ntitle . "')";

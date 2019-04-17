@@ -50,7 +50,15 @@ else{
 }
 
 ?>
+<?php
 
+if(isset($_POST['logout'])){
+	
+	header("Location: ../includes/logout.php");
+	exit();
+	
+}
+?>
 <?php
 // notification count
 include_once("../includes/db.php");
@@ -63,15 +71,7 @@ $count = $row[ 'COUNT(id)' ];
 //echo "Total notice: ".$count;
 //return;
 ?>
-<?php
 
-if(isset($_POST['logout'])){
-	
-	header("Location: ../includes/logout.php");
-	exit();
-	
-}
-?>
 <html>
 
 <head>

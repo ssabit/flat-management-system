@@ -96,7 +96,7 @@ if(isset($_POST['logout'])){
 													<th>Username</th>
 													<th>Password</th>
 													<th>Email</th>
-													<th>User Type</th>
+													<th>Role</th>
 													<th>Options</th>
 												</thead>
 
@@ -104,7 +104,7 @@ if(isset($_POST['logout'])){
         while($res = mysqli_fetch_array($result)) {         
             echo "<tr>";
             echo "<td>".$res['username']."</td>";
-            echo "<td>".$res['password']."</td>";
+            echo "<td style='max-width: 150px;word-wrap: break-word;'>".$res['password']."</td>";
             echo "<td>".$res['email']."</td>";
 			//echo "<td>".$res['user_level']."</td>";
             if($res['user_level']==1)
@@ -127,7 +127,7 @@ if(isset($_POST['logout'])){
 				
 				echo "<td>"."None"."</td>";
 			}
-			echo "<td><a href=\"user_edit.php?id=$res[id]\">Edit</a> | <a href=\"delete_user.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+			echo "<td><a href=\"user_edit.php?id=$res[id]\" ><button type='button' class='btn btn-info'>Edit</button></a> | <a href=\"delete_user.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\"><button type='button' class='btn btn-danger'>Delete</button></a></td>";
 			
 
 			

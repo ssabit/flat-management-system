@@ -7,7 +7,18 @@ if($_SESSION['u_name']==NULL){
     header("Location: ../index.php?login=error");
 }
 ?>
+<?php
 
+if(isset($_POST['logout'])){
+	
+	header("Location: ../includes/logout.php");
+	exit();
+	
+}
+
+
+
+?>
 <?php
 // including the database connection file
 include_once("../includes/db.php");
@@ -69,6 +80,7 @@ while($res = mysqli_fetch_array($result))
 	<meta charset="utf-8">
 	<title>User Edit</title>
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="../css/user.css">
@@ -82,12 +94,15 @@ while($res = mysqli_fetch_array($result))
 			<ul>
 				<li id="logo">Flat Management System</li>
 				<li id="user">User:
-					<?php //echo $_SESSION['u_id'];?>
+					<?php echo $_SESSION['u_id'];?>
 				</li><br>
-				<li id="button"><button type="button" class="btn btn-default btn-sm">
+				<form action="<?php $_PHP_SELF?>" method="post">
+				
+				<li id="button"><button  name="logout" type="submit" class="btn btn-default btn-sm">
           <span class="glyphicon glyphicon-log-out"></span> Log out
         </button>
 				</li>
+				</form>
 			</ul>
 
 		</div>
@@ -99,10 +114,10 @@ while($res = mysqli_fetch_array($result))
 		<div class="row">
 			<div class="col-md-3 ">
 				<div class="list-group ">
-					<a href="#" class="list-group-item list-group-item-action">Users</a>
-					<a href="../bank/accounts.php" class="list-group-item list-group-item-action">Bank Management</a>
-					<a href="flat_add_edit.php" class="list-group-item list-group-item-action">Flat</a>
-					<a href="Flat_details.php" class="list-group-item list-group-item-action">Flat Details</a>
+					<a href="../admin/admin.php" class="list-group-item list-group-item-action ">Users</a>
+					<a href="accounts.php" class="list-group-item list-group-item-action">Bank Management</a>
+					<a href="../admin/flat_add_edit.php" class="list-group-item list-group-item-action ">Flat</a>
+				<a href="../admin/Flat_details.php" class="list-group-item list-group-item-action">Flat Details</a>
 	
 
 				</div>

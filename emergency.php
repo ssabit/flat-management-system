@@ -70,7 +70,7 @@ if ( isset( $_POST[ 'logout' ] ) ) {
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-12">
-								<h2 style="font-size:30px;text-align:center;"></span>CALL 999. FOR ANY LIFE-THREATENING EMERGENCY.</h2>
+								<marquee><p style=" font-size: 20pt;color:red;"><img src="img/siren.png" alt=""> CALL 999. FOR ANY LIFE-THREATENING EMERGENCY</p></marquee>
 								<hr>
 							</div>
 						</div>

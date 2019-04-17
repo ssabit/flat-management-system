@@ -2,7 +2,7 @@
 
 //database_connection.php
 
-$connect = new PDO("mysql:host=flatmanagementsystem-mysqldbserver.mysql.database.azure.com;dbname=flatmanagementsystem", "sabit@flatmanagementsystem-mysqldbserver", "Saad1234");
+$connect = new PDO("mysql:host=localhost;dbname=flat_management_system", "root", "");
 
 date_default_timezone_set('Asia/Dhaka');
 
@@ -124,6 +124,17 @@ function fetch_is_type_status($user_id, $connect)
  return $output;
 }
 
+function get_user_level($user_id, $connect)
+{
+ $query = "SELECT user_level FROM users WHERE id = '$user_id'";
+ $statement = $connect->prepare($query);
+ $statement->execute();
+ $result = $statement->fetchAll();
+ foreach($result as $row)
+ {
+  return $row['user_level'];
+ }
+}
 
 
 ?>

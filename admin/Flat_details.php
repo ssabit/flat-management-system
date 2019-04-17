@@ -90,7 +90,7 @@ if(isset($_POST['logout'])){
 										<table class="table" id="users">
 											<tbody>
 												<thead>
-													<th>User ID</th>
+										
 													<th>Flat No</th>
 													<th>Name</th>
 													<th>Flat Rent</th>
@@ -106,7 +106,7 @@ if(isset($_POST['logout'])){
         while($res = mysqli_fetch_array($result)) {         
             $id=$res['id'];
 			echo "<tr>";
-            echo "<td>".$res['user_id']."</td>";
+            //echo "<td>".$res['user_id']."</td>";
             echo "<td>".$res['flat_no']."</td>";
             echo "<td>".$res['tenantname']."</td>";
             echo "<td>".$res['flatrent']."</td>";
@@ -115,7 +115,7 @@ if(isset($_POST['logout'])){
             echo "<td>".$res['gas']."</td>";
             echo "<td>".$res['water']."</td>";
             echo "<td>".$res['maintenance']."</td>"; 
-			echo "<td><a href=\"delete_details.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+			echo "<td><a href=\"delete_details.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\"><button type='button' class='btn btn-danger'>Delete</button></a></td>";
 			
 
 			

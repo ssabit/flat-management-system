@@ -9,6 +9,16 @@ if ( $_SESSION[ 'u_name' ] == NULL ) {
 include_once( "../includes/db.php" );
 // using mysqli_query instead
 ?>
+
+<?php
+
+if ( isset( $_POST[ 'logout' ] ) ) {
+
+	header( "Location: ../includes/logout.php" );
+	exit();
+
+}
+?>
 <?php
 // notification count
 include_once( "../includes/db.php" );
@@ -22,18 +32,6 @@ $count = $row[ 'COUNT(id)' ];
 //return;
 ?>
 
-<?php
-
-if ( isset( $_POST[ 'logout' ] ) ) {
-
-	header( "Location: ../includes/logout.php" );
-	exit();
-
-}
-
-
-
-?>
 <!doctype html>
 <html>
 
@@ -329,7 +327,7 @@ if ( isset( $_POST[ 'logout' ] ) ) {
 				in_out: in_out
 			},
 			success: function ( data, status ) {
-				//$("#myModal").modal('hide');
+				$("#myModal").modal('hide');
 				readRecords();
 			}
 		} );
