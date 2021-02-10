@@ -20,7 +20,17 @@ The tenant can pay apartment bill and track them. They can request any service f
 #### Landlord
 The landlord can check his tenant information. They can check monthly house-rental information. Can get notice from the caretaker and can conversation with the tenant and caretaker.
 
+## Core Features:
 
+i. Service Request
+
+ii. Staff Management System
+
+iii. Rent Management System
+
+iv. In-Out Tracker
+
+v. Online Message and Offline Text Message
 
 ## Built With
 
@@ -31,7 +41,7 @@ The landlord can check his tenant information. They can check monthly house-rent
 
 
 
-## Contributors
+## Authors
 
 * **Saad Ibna Omar Sabit** - [linkedin](https://www.linkedin.com/in/sabit/)
 * **Haider Ali** - [linkedin](https://www.linkedin.com/in/haideralibd/)
