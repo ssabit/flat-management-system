@@ -9,16 +9,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ssabit/flat-management-system?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/ssabit/flat-management-system?style=flat-square)
 
-This a web application to manage an Apartment. There are 3 roles in this application. Caretaker, Tenant and Landlord.
-
-#### Caretaker
-Caretaker can create and view tenant information, send notice to tenant, track in-out info about the building, send invoice for monthly payment, send a message to tenant, can track monthly payment history and also can manage different kinds of stuffs of the building. 
-
-#### Tenant
-The tenant can pay apartment bill and track them. They can request any service from caretaker if needed. Can chat with the caretaker via online and if the caretaker is not online then message sent to the caretaker cell phone automatically.
-
-#### Landlord
-The landlord can check his tenant information. They can check monthly house-rental information. Can get notice from the caretaker and can conversation with the tenant and caretaker.
+This a web application to manage an Apartment. There are 3 roles in this application. Caretaker, Tenant and Admin.
 
 ## Core Features:
 
@@ -30,7 +21,7 @@ iii. Rent Management
 
 iv. In-Out Tracker
 
-v. Online Message and Offline Text Message
+v. Online Message and Offline Text Messaging
 
 ## Built With
 
