@@ -24,9 +24,9 @@ The landlord can check his tenant information. They can check monthly house-rent
 
 i. Service Request
 
-ii. Staff Management System
+ii. Staff Management
 
-iii. Rent Management System
+iii. Rent Management
 
 iv. In-Out Tracker
 
@@ -34,11 +34,22 @@ v. Online Message and Offline Text Message
 
 ## Built With
 
-* [Bootstrap](https://getbootstrap.com/) - Front-end framework
-* [PHP](https://www.php.net/) - PHP Back-end language
-* [MySQL](https://www.mysql.com/) - Used to store data
-* [Twilio](https://www.twilio.com/docs/api) - Used to  send and receive SMS in cell phone 
+* Bootstrap
+* PHP
+* MySQL
+* Twilio
 
+
+## Project Overview
+
+<p align="center">
+   <h4>Role: Caretaker </h4>
+   <img src="https://github.com/ssabit/flat-management-system/blob/master/gif/caretaker.gif"><br>
+   <h4>Role: Tenant</h4>
+   <img src="https://github.com/ssabit/flat-management-system/blob/master/gif/tenants.gif"><br>
+   <h4>Role: Admin</h4>
+   <img src="https://github.com/ssabit/flat-management-system/blob/master/gif/admin.gif"><br>
+</p>
 
 
 ## Authors
